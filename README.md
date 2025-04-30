@@ -7,6 +7,7 @@ A React application that helps designers and developers find perfect font combin
 
 - Select from a curated list of popular Google Fonts
 - Preview heading and paragraph text with your selected fonts
+- Adjust font sizes with pixel-precision sliders
 - Real-time font loading and rendering
 - Responsive design that works on all devices
 
