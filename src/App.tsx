@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import FontSelector from './components/FontSelector'
 import FontPreview from './components/FontPreview'
+import ExportCode from './components/ExportCode'
 import { getGoogleFontsUrl } from './data/fonts'
 
 function App() {
   const [headingFont, setHeadingFont] = useState('Playfair Display:700')
   const [paragraphFont, setParagraphFont] = useState('Roboto:400')
   const [fontsLoaded, setFontsLoaded] = useState(false)
+  const [showExport, setShowExport] = useState(false)
+  const [headingSize, setHeadingSize] = useState(40)
+  const [paragraphSize, setParagraphSize] = useState(16)
 
   // Load the selected fonts from Google Fonts
   useEffect(() => {
@@ -59,10 +63,47 @@ function App() {
         </div>
 
         {fontsLoaded && (
-          <FontPreview
-            headingFont={headingFont}
-            paragraphFont={paragraphFont}
-          />
+          <>
+            <FontPreview
+              headingFont={headingFont}
+              paragraphFont={paragraphFont}
+              headingSize={headingSize}
+              paragraphSize={paragraphSize}
+              onHeadingSizeChange={setHeadingSize}
+              onParagraphSizeChange={setParagraphSize}
+            />
+            
+            {/* Tlačítko pro export */}
+            <div className="export-button-container">
+              <button 
+                className="export-button"
+                onClick={() => setShowExport(true)}
+              >
+                Export Code
+              </button>
+            </div>
+            
+            {/* Modální okno pro export */}
+            {showExport && (
+              <div className="modal-overlay">
+                <div className="modal-content">
+                  <button 
+                    className="close-button"
+                    onClick={() => setShowExport(false)}
+                  >
+                    &times;
+                  </button>
+                  <h2>Export Font Configuration</h2>
+                  <ExportCode
+                    headingFont={headingFont}
+                    paragraphFont={paragraphFont}
+                    headingSize={headingSize}
+                    paragraphSize={paragraphSize}
+                  />
+                </div>
+              </div>
+            )}
+          </>
         )}
       </main>
 

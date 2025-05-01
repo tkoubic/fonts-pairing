@@ -1,19 +1,40 @@
 import '../styles/FontPreview.css';
 import { parseFontWithVariant } from '../data/fonts';
-import { useState } from 'react';
 
 interface FontPreviewProps {
-  headingFont: string; // Format: "FontName:variant" (e.g., "Roboto:700")
-  paragraphFont: string; // Format: "FontName:variant" (e.g., "Roboto:400")
+  headingFont: string;
+  paragraphFont: string;
+  headingSize?: number;
+  paragraphSize?: number;
+  onHeadingSizeChange?: (size: number) => void;
+  onParagraphSizeChange?: (size: number) => void;
 }
 
-const FontPreview = ({ headingFont, paragraphFont }: FontPreviewProps) => {
-  const [headingSize, setHeadingSize] = useState(40);
-  const [paragraphSize, setParagraphSize] = useState(16);
-  
+const FontPreview = ({ 
+  headingFont, 
+  paragraphFont, 
+  headingSize = 40, 
+  paragraphSize = 16,
+  onHeadingSizeChange,
+  onParagraphSizeChange
+}: FontPreviewProps) => {
   // Parse the selected fonts to get the font name and variant
   const { fontName: headingFontName, variant: headingVariant } = parseFontWithVariant(headingFont);
   const { fontName: paragraphFontName, variant: paragraphVariant } = parseFontWithVariant(paragraphFont);
+
+  const handleHeadingSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newSize = parseInt(e.target.value);
+    if (onHeadingSizeChange) {
+      onHeadingSizeChange(newSize);
+    }
+  };
+
+  const handleParagraphSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newSize = parseInt(e.target.value);
+    if (onParagraphSizeChange) {
+      onParagraphSizeChange(newSize);
+    }
+  };
 
   return (
     <div className="font-preview">
@@ -27,7 +48,7 @@ const FontPreview = ({ headingFont, paragraphFont }: FontPreviewProps) => {
             min="20" 
             max="72" 
             value={headingSize} 
-            onChange={(e) => setHeadingSize(parseInt(e.target.value))} 
+            onChange={handleHeadingSizeChange} 
           />
         </div>
         <div className="font-size-control">
@@ -37,7 +58,7 @@ const FontPreview = ({ headingFont, paragraphFont }: FontPreviewProps) => {
             min="12" 
             max="24" 
             value={paragraphSize} 
-            onChange={(e) => setParagraphSize(parseInt(e.target.value))} 
+            onChange={handleParagraphSizeChange} 
           />
         </div>
       </div>
