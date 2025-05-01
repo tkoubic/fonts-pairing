@@ -80,10 +80,10 @@ const FontSelector = ({ label, selectedFont, onFontChange }: FontSelectorProps) 
             ) : (
               <div className="font-selector-variants">
                 <div className="font-selector-back" onClick={handleBackToFonts}>
-                  ← Back to fonts
+                  ← Zpět
                 </div>
                 <div className="font-selector-variant-title">
-                  Select a variant for {selectedFontObj?.name}:
+                  Vyber si variantu pro {selectedFontObj?.name}:
                 </div>
                 <div className="font-selector-options">
                   {selectedFontObj?.variants.map((variantOption) => (
@@ -96,7 +96,7 @@ const FontSelector = ({ label, selectedFont, onFontChange }: FontSelectorProps) 
                       }}
                       onClick={() => handleVariantSelect(selectedFontObj.name, variantOption)}
                     >
-                      {variantOption} - Sample Text
+                      {variantOption} - Ukázka textu
                     </div>
                   ))}
                 </div>

@@ -1,11 +1,29 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import './App.css'
 import FontSelector from './components/FontSelector'
 import FontPreview from './components/FontPreview'
 import ExportCode from './components/ExportCode'
 import FavoriteCombinations from './components/FavoriteCombinations'
 import { getGoogleFontsUrl } from './data/fonts'
+
+// Header component with conditional subtitle
+const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
+    <header className="app-header">
+      <h1>Náhledy písem pro web</h1>
+      {isHomePage && <p>vyber si písmo pro nadpisy a odstavce</p>}
+
+      <nav className="app-nav">
+        <Link to="/" className="nav-link">Párování písem</Link>
+        <Link to="/oblibene" className="nav-link">Oblíbené kombinace</Link>
+      </nav>
+    </header>
+  );
+};
 
 // Home component for the main font pairing functionality
 const Home = () => {
@@ -106,33 +124,33 @@ const Home = () => {
   )
 }
 
-function App() {
+// App wrapper that provides routing context
+const AppWrapper = () => {
   return (
     <BrowserRouter>
-      <div className="app-container">
-        <header className="app-header">
-          <h1>Font Pairing App</h1>
-          <p>Select fonts for headings and paragraphs to see how they look together</p>
-
-          <nav className="app-nav">
-            <Link to="/" className="nav-link">Párování písem</Link>
-            <Link to="/oblibene" className="nav-link">Oblíbené kombinace</Link>
-          </nav>
-        </header>
-
-        <main className="app-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/oblibene" element={<FavoriteCombinations />} />
-          </Routes>
-        </main>
-
-        <footer className="app-footer">
-          <p>Created with React and TypeScript</p>
-        </footer>
-      </div>
+      <App />
     </BrowserRouter>
-  )
+  );
+};
+
+// Main App component
+function App() {
+  return (
+    <div className="app-container">
+      <Header />
+
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/oblibene" element={<FavoriteCombinations />} />
+        </Routes>
+      </main>
+
+      <footer className="app-footer">
+        <p>Vytvořeno pomocí React a TypeScript. Vibing is here.</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default AppWrapper
