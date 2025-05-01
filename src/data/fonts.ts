@@ -30,70 +30,127 @@ export const getFontByName = (name: string): Font | undefined => {
 };
 
 export const fonts: Font[] = [
+  // Páry fontů podle vašeho seznamu
+  // 1. DM Serif Display + Poppins
   {
-    name: 'Roboto',
-    category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
-  },
-  {
-    name: 'Open Sans',
-    category: 'sans-serif',
-    variants: ['300', '400', '600', '700']
-  },
-  {
-    name: 'Lato',
-    category: 'sans-serif',
-    variants: ['300', '400', '700', '900']
-  },
-  {
-    name: 'Montserrat',
-    category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
-  },
-  {
-    name: 'Playfair Display',
+    name: 'DM Serif Display',
     category: 'serif',
-    variants: ['400', '500', '700', '900']
-  },
-  {
-    name: 'Merriweather',
-    category: 'serif',
-    variants: ['300', '400', '700', '900']
+    variants: ['400']
   },
   {
     name: 'Poppins',
     category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
+    variants: ['300', '400', '500', '600', '700']
   },
+  
+  // 2. Playfair Display + Source Sans Pro
   {
-    name: 'Oswald',
-    category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
-  },
-  {
-    name: 'Raleway',
-    category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
-  },
-  {
-    name: 'PT Serif',
+    name: 'Playfair Display',
     category: 'serif',
-    variants: ['400', '700']
+    variants: ['400', '500', '600', '700', '900']
   },
   {
     name: 'Source Sans Pro',
     category: 'sans-serif',
     variants: ['300', '400', '600', '700']
   },
+  
+  // 3. Montserrat Bold + Roboto Slab
+  {
+    name: 'Montserrat',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700', '800']
+  },
+  {
+    name: 'Roboto Slab',
+    category: 'serif',
+    variants: ['300', '400', '500', '700']
+  },
+  
+  // 4. Raleway Light + Frank Ruhl Libre
+  {
+    name: 'Raleway',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  {
+    name: 'Frank Ruhl Libre',
+    category: 'serif',
+    variants: ['300', '400', '500', '700', '900']
+  },
+  
+  // 5. Bebas Neue + Roboto
+  {
+    name: 'Bebas Neue',
+    category: 'display',
+    variants: ['400']
+  },
+  {
+    name: 'Roboto',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '700']
+  },
+  
+  // 6. Lora + Open Sans
+  {
+    name: 'Lora',
+    category: 'serif',
+    variants: ['400', '500', '600', '700']
+  },
+  {
+    name: 'Open Sans',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  
+  // 7. Oswald Medium + Roboto Bold
+  {
+    name: 'Oswald',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  
+  // 8. Archivo Black + Judson
+  {
+    name: 'Archivo Black',
+    category: 'sans-serif',
+    variants: ['400']
+  },
+  {
+    name: 'Judson',
+    category: 'serif',
+    variants: ['400', '700']
+  },
+  
+  // 9. Quicksand Medium/Light + Source Sans Pro
+  {
+    name: 'Quicksand',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  
+  // 10. Merriweather + Open Sans Condensed
+  {
+    name: 'Merriweather',
+    category: 'serif',
+    variants: ['300', '400', '700', '900']
+  },
+  {
+    name: 'Open Sans Condensed',
+    category: 'sans-serif',
+    variants: ['300', '700']
+  },
+  
+  // Další populární fonty, které mohou být užitečné
+  {
+    name: 'PT Serif',
+    category: 'serif',
+    variants: ['400', '700']
+  },
   {
     name: 'Nunito',
     category: 'sans-serif',
     variants: ['300', '400', '600', '700']
-  },
-  {
-    name: 'Quicksand',
-    category: 'sans-serif',
-    variants: ['300', '400', '500', '700']
   },
   {
     name: 'Crimson Text',
@@ -104,11 +161,6 @@ export const fonts: Font[] = [
     name: 'Work Sans',
     category: 'sans-serif',
     variants: ['300', '400', '500', '700']
-  },
-  {
-    name: 'Lora',
-    category: 'serif',
-    variants: ['400', '500', '700']
   },
   {
     name: 'Fira Sans',
