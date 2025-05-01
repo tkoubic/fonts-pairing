@@ -22,29 +22,9 @@ const FavoriteCombinations = () => {
     { id: 10, headingFont: 'Merriweather', paragraphFont: 'Open Sans Condensed', suitableFor: 'Čitelné weby s velkým množstvím obsahu' },
   ]);
 
-  const exportToCSV = () => {
-    // Create CSV content
-    const headers = ['Kombinace', 'Písmo pro nadpisy', 'Písmo pro tělo textu', 'Vhodné pro'];
-    const rows = combinations.map(comb => 
-      [comb.id, comb.headingFont, comb.paragraphFont, comb.suitableFor]
-    );
+ 
     
-    const csvContent = [
-      headers.join(','),
-      ...rows.map(row => row.join(','))
-    ].join('\n');
-    
-    // Create a blob and download link
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'font-kombinace.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+   
 
   return (
     <div className="favorite-combinations">
