@@ -8,14 +8,7 @@ DEMO: `https://fontspair.netlify.app/`
 
 ## Screenshots
 
-### Font Pairing Tool
-![Font Pairing Tool](https://i.imgur.com/example1.png)
 
-### Recommended Combinations
-![Recommended Combinations](https://i.imgur.com/example2.png)
-
-### Mobile View
-![Mobile View](https://i.imgur.com/example3.png)
 
 
 ## Features

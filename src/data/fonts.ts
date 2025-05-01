@@ -42,7 +42,7 @@ export const fonts: Font[] = [
     category: 'sans-serif',
     variants: ['300', '400', '500', '600', '700']
   },
-  
+
   // 2. Playfair Display + Source Sans Pro
   {
     name: 'Playfair Display',
@@ -54,7 +54,7 @@ export const fonts: Font[] = [
     category: 'sans-serif',
     variants: ['300', '400', '600', '700']
   },
-  
+
   // 3. Montserrat Bold + Roboto Slab
   {
     name: 'Montserrat',
@@ -66,7 +66,7 @@ export const fonts: Font[] = [
     category: 'serif',
     variants: ['300', '400', '500', '700']
   },
-  
+
   // 4. Raleway Light + Frank Ruhl Libre
   {
     name: 'Raleway',
@@ -78,7 +78,7 @@ export const fonts: Font[] = [
     category: 'serif',
     variants: ['300', '400', '500', '700', '900']
   },
-  
+
   // 5. Bebas Neue + Roboto
   {
     name: 'Bebas Neue',
@@ -90,7 +90,7 @@ export const fonts: Font[] = [
     category: 'sans-serif',
     variants: ['300', '400', '500', '700']
   },
-  
+
   // 6. Lora + Open Sans
   {
     name: 'Lora',
@@ -102,14 +102,14 @@ export const fonts: Font[] = [
     category: 'sans-serif',
     variants: ['300', '400', '500', '600', '700']
   },
-  
+
   // 7. Oswald Medium + Roboto Bold
   {
     name: 'Oswald',
     category: 'sans-serif',
     variants: ['300', '400', '500', '600', '700']
   },
-  
+
   // 8. Archivo Black + Judson
   {
     name: 'Archivo Black',
@@ -121,14 +121,14 @@ export const fonts: Font[] = [
     category: 'serif',
     variants: ['400', '700']
   },
-  
+
   // 9. Quicksand Medium/Light + Source Sans Pro
   {
     name: 'Quicksand',
     category: 'sans-serif',
     variants: ['300', '400', '500', '600', '700']
   },
-  
+
   // 10. Merriweather + Open Sans Condensed
   {
     name: 'Merriweather',
@@ -140,7 +140,7 @@ export const fonts: Font[] = [
     category: 'sans-serif',
     variants: ['300', '700']
   },
-  
+
   // Další populární fonty, které mohou být užitečné
   {
     name: 'PT Serif',
@@ -181,6 +181,167 @@ export const fonts: Font[] = [
     name: 'Inconsolata',
     category: 'monospace',
     variants: ['400', '700']
+  },
+
+  // Rozšířená kolekce písem
+  // Serif písma
+  {
+    name: 'Bitter',
+    category: 'serif',
+    variants: ['400', '500', '600', '700']
+  },
+  {
+    name: 'Cormorant Garamond',
+    category: 'serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  {
+    name: 'Libre Baskerville',
+    category: 'serif',
+    variants: ['400', '700']
+  },
+  {
+    name: 'Spectral',
+    category: 'serif',
+    variants: ['200', '300', '400', '500', '600', '700', '800']
+  },
+  {
+    name: 'Vollkorn',
+    category: 'serif',
+    variants: ['400', '500', '600', '700', '800', '900']
+  },
+  {
+    name: 'Alegreya',
+    category: 'serif',
+    variants: ['400', '500', '600', '700', '800', '900']
+  },
+
+  // Sans-serif písma
+  {
+    name: 'Inter',
+    category: 'sans-serif',
+    variants: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+  },
+  {
+    name: 'Rubik',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700', '800', '900']
+  },
+  {
+    name: 'Manrope',
+    category: 'sans-serif',
+    variants: ['200', '300', '400', '500', '600', '700', '800']
+  },
+  {
+    name: 'Outfit',
+    category: 'sans-serif',
+    variants: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+  },
+  {
+    name: 'Space Grotesk',
+    category: 'sans-serif',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  {
+    name: 'DM Sans',
+    category: 'sans-serif',
+    variants: ['400', '500', '700']
+  },
+
+  // Display písma
+  {
+    name: 'Abril Fatface',
+    category: 'display',
+    variants: ['400']
+  },
+  {
+    name: 'Yeseva One',
+    category: 'display',
+    variants: ['400']
+  },
+  {
+    name: 'Righteous',
+    category: 'display',
+    variants: ['400']
+  },
+  {
+    name: 'Comfortaa',
+    category: 'display',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  {
+    name: 'Paytone One',
+    category: 'display',
+    variants: ['400']
+  },
+  {
+    name: 'Staatliches',
+    category: 'display',
+    variants: ['400']
+  },
+
+  // Handwriting písma
+  {
+    name: 'Caveat',
+    category: 'handwriting',
+    variants: ['400', '500', '600', '700']
+  },
+  {
+    name: 'Dancing Script',
+    category: 'handwriting',
+    variants: ['400', '500', '600', '700']
+  },
+  {
+    name: 'Satisfy',
+    category: 'handwriting',
+    variants: ['400']
+  },
+  {
+    name: 'Pacifico',
+    category: 'handwriting',
+    variants: ['400']
+  },
+  {
+    name: 'Kalam',
+    category: 'handwriting',
+    variants: ['300', '400', '700']
+  },
+  {
+    name: 'Indie Flower',
+    category: 'handwriting',
+    variants: ['400']
+  },
+
+  // Monospace písma
+  {
+    name: 'Fira Code',
+    category: 'monospace',
+    variants: ['300', '400', '500', '600', '700']
+  },
+  {
+    name: 'JetBrains Mono',
+    category: 'monospace',
+    variants: ['100', '200', '300', '400', '500', '600', '700', '800']
+  },
+  {
+    name: 'Source Code Pro',
+    category: 'monospace',
+    variants: ['200', '300', '400', '500', '600', '700', '800', '900']
+  },
+  {
+    name: 'Space Mono',
+    category: 'monospace',
+    variants: ['400', '700']
+  },
+  {
+    name: 'Ubuntu Mono',
+    category: 'monospace',
+    variants: ['400', '700']
+  },
+  {
+    name: 'Roboto Mono',
+    category: 'monospace',
+    variants: ['100', '200', '300', '400', '500', '600', '700']
   }
 ];
 

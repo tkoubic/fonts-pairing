@@ -16,46 +16,85 @@
 .font-preview-content {
   max-width: 800px;
   margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+}
+
+.font-preview-content h1,
+.font-preview-content h2,
+.font-preview-content h3,
+.font-preview-content h4,
+.font-preview-content h5,
+.font-preview-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
 }
 
 .font-preview-content h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  color: #333;
+  margin-top: 0;
 }
 
 .font-preview-content p {
   margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
   color: #444;
 }
 
-.font-size-controls {
+/* Nové styly pro rozšířené ovládací prvky */
+.typography-controls {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.typography-control-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
   background-color: #f5f5f5;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.control-section-title {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
 }
 
 .font-size-control {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.font-size-control:last-child {
+  margin-bottom: 0;
 }
 
 .font-size-control label {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: #555;
+  display: flex;
+  justify-content: space-between;
 }
 
 .font-size-control input[type="range"] {
   width: 100%;
   cursor: pointer;
+  margin-top: 0.25rem;
+}
+
+/* Styly pro zobrazení typografie */
+.font-preview-content small {
+  color: #666;
 }
 
 /* Mobile responsiveness for font preview */
@@ -64,20 +103,25 @@
     padding: 1rem;
     margin-top: 1rem;
   }
-  
+
   .font-preview-title {
     margin-bottom: 1rem;
   }
-  
-  .font-size-controls {
+
+  .typography-controls {
     flex-direction: column;
     gap: 1rem;
   }
-  
-  .font-size-control {
+
+  .typography-control-section {
     width: 100%;
+    padding: 1rem;
   }
-  
+
+  .font-preview-content {
+    padding: 1rem;
+  }
+
   .font-preview-content h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
