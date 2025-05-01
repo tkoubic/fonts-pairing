@@ -1,3 +1,368 @@
+# ===================================================================
+# General Comprehensive and Secure .gitignore
+#
+# Cíl: Ignorovat soubory, které by neměly být v repozitáři:
+# 1. Závislosti (spravované package managery)
+# 2. Zkompilovaný kód a build artefakty
+# 3. Citlivá data (klíče, hesla, lokální konfigurace)
+# 4. Logy a dočasné soubory
+# 5. Soubory specifické pro OS
+# 6. Soubory specifické pro IDE/editor (většinou)
+# 7. Nahrávky uživatelů a generovaný obsah
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Citlivá data a lokální konfigurace - VELMI DŮLEŽITÉ!
+# -------------------------------------------------------------------
+# NIKDY NECOMMITUJTE HESLA, API KLÍČE NEBO JINÉ TAJEMSTVÍ!
+# Použijte environmentální proměnné nebo bezpečné nástroje pro správu tajemství.
+
+# Soubory s proměnnými prostředí (často obsahují citlivá data)
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Běžné názvy pro lokální konfigurační soubory
+config.local.*
+local.*.yaml
+local.*.yml
+local.*.json
+local.*.php
+settings.local.*
+parameters.local.yml
+*.local
+
+# Soukromé klíče a certifikáty
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+
+# Hesla a tajné soubory
+*passwords*
+*secrets*
+credentials.*
+secret_token.rb
+
+# Terraform state (může obsahovat citlivé informace)
+*.tfstate
+*.tfstate.backup
+
+# AWS credentials
+.aws/credentials
+.aws/config
+
+# Google Cloud credentials
+*.json # (buďte opatrní, může zahrnout i legitimní json soubory, upřesněte podle potřeby)
+gcloud/
+
+# SSH klíče (nikdy by neměly být v projektu)
+/ssh/
+id_rsa
+id_dsa
+
+# -------------------------------------------------------------------
+# Závislosti (spravované externě)
+# -------------------------------------------------------------------
+# Node.js / npm / yarn / pnpm
+node_modules/
+package-lock.json
+yarn.lock         # (Obecně se doporučuje commitovat)
+pnpm-lock.yaml    # (Obecně se doporučuje commitovat)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm
+.yarn/
+
+# Python / pip / venv
+venv/
+env/
+.venv/
+.env/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+build/
+wheels/
+pip-wheel-metadata/
+*.egg
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+.tox/
+.nox/
+pip-log.txt
+pip-delete-this-directory.txt
+celerybeat-schedule
+*.ipynb_checkpoints
+
+# Ruby / Bundler / Gems
+vendor/bundle/
+vendor/cache/
+.bundle/
+Gemfile.lock # (Obecně se doporučuje commitovat)
+*.gem
+/.bundle # Pokud je bundler konfigurován na lokální instalaci
+
+# PHP / Composer
+vendor/
+composer.phar
+composer.lock # (Obecně se doporučuje commitovat)
+phpunit.result.cache
+.phpunit.result.cache
+
+# Java / Maven / Gradle
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+hs_err_pid*
+*generated-sources/
+
+# Go
+vendor/ # Pokud používáte vendoring
+*.exe
+*.test
+*.out
+bin/
+pkg/
+
+# .NET / NuGet
+[Bb]in/
+[Oo]bj/
+packages/
+*.user
+*.suo
+*.Publish.xml
+*.csproj.user
+*.vbproj.user
+project.lock.json
+project.assets.json
+
+# Rust / Cargo
+target/
+Cargo.lock # (Obecně se doporučuje commitovat)
+
+# Swift / Cocoapods / Carthage / SPM
+Pods/
+Carthage/
+DerivedData/
+*.xcodeproj/project.xcworkspace
+*.xcodeproj/xcuserdata/
+*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/xcuserdata/
+.swiftpm/
+
+# -------------------------------------------------------------------
+# Build artefakty a zkompilovaný kód
+# -------------------------------------------------------------------
+dist/
+build/
+out/
+release/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.app
+*.ipa
+
+# -------------------------------------------------------------------
+# Logy a dočasné soubory
+# -------------------------------------------------------------------
+*.log
+logs/
+*.log.*
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+*.rej
+
+# -------------------------------------------------------------------
+# Soubory operačního systému
+# -------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+Network Trash Folder
+Temporary Items
+Icon? # Skrytý soubor s ikonou složky
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+
+# -------------------------------------------------------------------
+# Soubory specifické pro IDE / Editor
+# -------------------------------------------------------------------
+# IntelliJ IDEA, PyCharm, WebStorm, PhpStorm, etc.
+.idea/
+!*.iml # Někdy je .iml soubor potřeba, zvažte podle projektu
+!modules.xml # Někdy potřeba
+!misc.xml # Někdy potřeba (např. pro SDK)
+!deployment.xml # Někdy potřeba
+!libraries # Někdy potřeba
+*.iws
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# Eclipse
+.project
+.classpath
+.settings/
+*.pydevproject
+
+# NetBeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+*.nbattrs
+
+# Vim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+#*#
+/.saves/
+*#[0-9]*#
+
+# -------------------------------------------------------------------
+# Další běžné soubory/adresáře k ignorování
+# -------------------------------------------------------------------
+# Nahrané soubory / Média / Cache
+uploads/
+media/
+assets/ # Pokud je generováno build procesem
+cache/
+tmp/
+temp/
+
+# Databázové soubory
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# Dokumentace generovaná nástroji (pokud ji nechcete verzovat)
+docs/_build/
+site/
+api_docs/
+
+# Nástroje pro testování a pokrytí kódu
+coverage/
+lcov.info
+*.gcno
+*.gcda
+*.gcov
+.nyc_output/
+
+# Různé
+*.pid
+*.seed
+*.lock
+junit.xml
+
+# Komprimované soubory (pokud nejsou součástí distribuce)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# -------------------------------------------------------------------
+# Specifické pro platformy/frameworky (příklady - přidejte dle potřeby)
+# -------------------------------------------------------------------
+# Docker
+.dockerignore # Tento soubor má svůj účel, neignorujte ho samotný
+docker-compose.override.yml
+
+# Serverless Framework
+.serverless/
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.iml
+local.properties
+.gradle/
+captures/
+*.hprof
+
+# Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.dart_tool/
+build/
+
+# Jekyll
+_site/
+.jekyll-metadata
+
+# Hugo
+resources/
+public/
+
+# Vagrant
+.vagrant/
+
+
 # Logs
 logs
 *.log
@@ -7,7 +372,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+
 dist
 dist-ssr
 *.local
@@ -22,3 +387,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# ===================================================================
+# Konec .gitignore
+# ===================================================================
+
