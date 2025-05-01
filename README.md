@@ -3,6 +3,10 @@
 
 A React application that helps designers and developers find perfect font combinations for their projects. This tool allows you to select and preview different font pairings for headings and paragraphs.
 
+
+DEMO: `https://fontspair.netlify.app/`
+
+
 ## Features
 
 - Select from a curated list of popular Google Fonts
